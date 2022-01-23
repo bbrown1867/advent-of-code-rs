@@ -20,14 +20,14 @@ impl FromStr for Motion {
     }
 }
 
-pub struct Sub<T> {
+pub struct Submarine<T> {
     depth: T,
     position: T,
     aim: T,
-    apply_command: fn(&mut Sub<T>, Motion, T),
+    apply_command: fn(&mut Submarine<T>, Motion, T),
 }
 
-impl<T> Sub<T>
+impl<T> Submarine<T>
 where
     T: Copy
         + std::ops::Add<Output = T>
@@ -41,7 +41,7 @@ where
             Self::apply_command_part2
         };
 
-        Sub {
+        Submarine {
             depth,
             position,
             aim,
@@ -108,14 +108,14 @@ mod test {
 
     #[test]
     fn test_sub_part1() {
-        let mut sub = Sub::new(0, 0, 0, true);
+        let mut sub = Submarine::new(0, 0, 0, true);
         sub.drive(&get_test_input());
         assert_eq!(sub.get_product(), 150);
     }
 
     #[test]
     fn test_sub_part2() {
-        let mut sub = Sub::new(0, 0, 0, false);
+        let mut sub = Submarine::new(0, 0, 0, false);
         sub.drive(&get_test_input());
         assert_eq!(sub.get_product(), 900);
     }
