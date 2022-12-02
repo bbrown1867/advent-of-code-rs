@@ -1,6 +1,7 @@
 use std::fs;
 
 pub mod day01;
+pub mod day02;
 
 pub fn text_file_to_vec(path: &str) -> Vec<String> {
     let contents = fs::read_to_string(path).expect("Could not read file.");
