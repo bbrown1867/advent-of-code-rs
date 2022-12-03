@@ -4,10 +4,10 @@ pub fn main() {
     let raw_data = text_file_to_vec("data/day01.txt");
 
     let max_calories = find_max_calories(&raw_data);
-    println!("day01 part1: {}", max_calories);
+    assert_eq!(max_calories, 73211);
 
     let max_calories = find_calories_of_top_groups(&raw_data);
-    println!("day01 part2 {}", max_calories);
+    assert_eq!(max_calories, 213958);
 }
 
 fn get_elf_calories(raw_data: &Vec<String>) -> Vec<u32> {

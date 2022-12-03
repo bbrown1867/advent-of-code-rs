@@ -5,10 +5,10 @@ pub fn main() {
     let raw_data = text_file_to_vec("data/day02.txt");
 
     let score = score_strategy_guide(&raw_data, true);
-    println!("day02 part1: {}", score);
+    assert_eq!(score, 13268);
 
     let score = score_strategy_guide(&raw_data, false);
-    println!("day02 part2: {}", score);
+    assert_eq!(score, 15508);
 }
 
 type Score = u32;
