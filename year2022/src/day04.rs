@@ -8,7 +8,7 @@ pub fn main() {
     assert_eq!(result, 515);
 
     let result = count_partial_overlap(&raw_data);
-    println!("{}", result);
+    assert_eq!(result, 883);
 }
 
 struct Range {
